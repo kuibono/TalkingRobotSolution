@@ -7,15 +7,28 @@ namespace Wisdom.Context
 {
     public class TalkingContext
     {
-        public TalkingUserInfo UserInfo { get; set; }
+        public ContextUser User { get; set; }
+
+        public ContextUser RobotInfo { get; set; }
 
         /// <summary>
-        /// 对话
+        /// 友好程度
         /// </summary>
-        public List<string> Words { get; set; }
+        public int Friendly { get; set; }
 
-        public TalkingType TalkingType { get; set; }
+        public List<UserWords> Words { get; set; }
 
+        public UserWords LastWords { get; set; }
+
+        public List<string> WordsToResponse { get; set; }
+
+
+
+        public int RobotMood { get; set; }
+
+        public int UserMood { get; set; }
+
+        public DateTime StartTime { get; set; }
 
 
     }
