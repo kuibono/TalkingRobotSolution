@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="Data2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Data2TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Data2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Data2Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Word" EntityType="Data2.Word" />
+        </EntityContainer>
+        <EntityType Name="Word">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Content" Nullable="false" />
+          <Property Type="Int32" Name="Length" Nullable="false" />
+          <Property Type="Boolean" Name="cn" Nullable="false" >
+            <Documentation>
+              <Summary>具体名词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="an" Nullable="false" >
+            <Documentation>
+              <Summary>抽象名词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="on" Nullable="false" >
+            <Documentation>
+              <Summary>方位名词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="pp" Nullable="false" >
+            <Documentation>
+              <Summary>人称代词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="dp" Nullable="false" >
+            <Documentation>
+              <Summary>指示代词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="qp" Nullable="false" >
+            <Documentation>
+              <Summary>疑问代词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="tv" Nullable="false" >
+            <Documentation>
+              <Summary>及物动词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="iv" Nullable="false" >
+            <Documentation>
+              <Summary>不及物动词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="cv" Nullable="false" >
+            <Documentation>
+              <Summary>能源动词 可能</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="nv" Nullable="false" >
+            <Documentation>
+              <Summary>能愿动词 必要</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="wv" Nullable="false" >
+            <Documentation>
+              <Summary>能愿动词 愿意</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="dv" Nullable="false" >
+            <Documentation>
+              <Summary>趋向动词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="adjn" Nullable="false" >
+            <Documentation>
+              <Summary>形容词 性质</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="adjs" Nullable="false" >
+            <Documentation>
+              <Summary>形容词-状态</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="bno" Nullable="false" >
+            <Documentation>
+              <Summary>基数</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="ono" Nullable="false" >
+            <Documentation>
+              <Summary>序数</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="cno" Nullable="false" >
+            <Documentation>
+              <Summary>分数</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="mno" Nullable="false" >
+            <Documentation>
+              <Summary>倍数</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="ano" Nullable="false" >
+            <Documentation>
+              <Summary>概数</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="nq" Nullable="false" >
+            <Documentation>
+              <Summary>名量词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="vq" Nullable="false" >
+            <Documentation>
+              <Summary>动量词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="advd" Nullable="false" >
+            <Documentation>
+              <Summary>副词程度</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="advr" Nullable="false" >
+            <Documentation>
+              <Summary>副词范围</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="advt" Nullable="false" >
+            <Documentation>
+              <Summary>副词时间</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="advn" Nullable="false" >
+            <Documentation>
+              <Summary>副词否定</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="prer" Nullable="false" >
+            <Documentation>
+              <Summary>介词对象关系</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="pred" Nullable="false" >
+            <Documentation>
+              <Summary>介词住所方位</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="prere" Nullable="false" >
+            <Documentation>
+              <Summary>介词 原因</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="prepu" Nullable="false" >
+            <Documentation>
+              <Summary>介词目的</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="prec" Nullable="false" >
+            <Documentation>
+              <Summary>介词比较</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="pree" Nullable="false" >
+            <Documentation>
+              <Summary>介词排除</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="conu" Nullable="false" >
+            <Documentation>
+              <Summary>连词联合</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="conp" Nullable="false" >
+            <Documentation>
+              <Summary>连词偏正</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="pars" Nullable="false" >
+            <Documentation>
+              <Summary>助词结构</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="part" Nullable="false" >
+            <Documentation>
+              <Summary>助词时态</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="parm" Nullable="false" >
+            <Documentation>
+              <Summary>助词语气</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="inth" Nullable="false" >
+            <Documentation>
+              <Summary>叹词喜悦</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="ints" Nullable="false" >
+            <Documentation>
+              <Summary>叹词悲伤</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="inta" Nullable="false" >
+            <Documentation>
+              <Summary>叹词愤怒</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="intsu" Nullable="false" >
+            <Documentation>
+              <Summary>叹词惊讶</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="intc" Nullable="false" >
+            <Documentation>
+              <Summary>叹词呼唤</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="intr" Nullable="false" >
+            <Documentation>
+              <Summary>叹词应答</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="oo" Nullable="false" >
+            <Documentation>
+              <Summary>叹词</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="favor" Nullable="false" >
+            <Documentation>
+              <Summary>喜欢程度</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="happy" Nullable="false" >
+            <Documentation>
+              <Summary>欢乐程度</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Int32" Name="anger" Nullable="false" >
+            <Documentation>
+              <Summary>愤怒程度</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Regex" Nullable="false" />
+          <Property Type="Boolean" Name="ZhuWei" Nullable="false" />
+          <Property Type="Boolean" Name="DongBin" Nullable="false" />
+          <Property Type="Boolean" Name="PianZhengDingZhong" Nullable="false" />
+          <Property Type="Boolean" Name="PianZhengZhuangZhong" Nullable="false" />
+          <Property Type="Boolean" Name="ZhongBu" Nullable="false" />
+          <Property Type="Boolean" Name="LianHe" Nullable="false" />
+          <Property Type="Boolean" Name="LianWei" Nullable="false" />
+          <Property Type="Boolean" Name="JianYu" Nullable="false" />
+          <Property Type="Boolean" Name="TongWei" Nullable="false" />
+          <Property Type="Boolean" Name="FangWei" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Data2" />
+        <Alias Key="Target" Value="Data2.Store" />
+        <EntityContainerMapping CdmEntityContainer="Data2Container" StorageEntityContainer="Data2TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Data2" ZoomLevel="71" >
+        <EntityTypeShape EntityType="Data2.Word" Width="1.875" PointX="2.625" PointY="1.375" Height="12.364563802083334" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

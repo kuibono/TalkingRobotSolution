@@ -45,6 +45,8 @@
     <Compile Include="Context\ContextUser.cs" />
     <Compile Include="Context\Env.cs" />
     <Compile Include="Context\TalkingContext.cs" />
+    <Compile Include="Context\UserIdentification.cs" />
+    <Compile Include="Context\UserWords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -52,26 +54,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceHelper\Svc.cs" />
-    <Compile Include="TalkAbout\About.cs" />
-    <Compile Include="TalkAbout\Live\Dress.cs" />
-    <Compile Include="TalkAbout\Live\Eat.cs" />
-    <Compile Include="TalkAbout\Live\Fare.cs" />
-    <Compile Include="TalkAbout\Live\Play.cs" />
-    <Compile Include="TalkAbout\Live\Travel.cs" />
+    <Compile Include="Struct\Relatives.cs" />
     <Compile Include="WordsProcess.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TalkAbout\Art\" />
-    <Folder Include="TalkAbout\Charactor\" />
-    <Folder Include="TalkAbout\Culture\" />
-    <Folder Include="TalkAbout\Economy\" />
-    <Folder Include="TalkAbout\Geo\" />
-    <Folder Include="TalkAbout\History\" />
-    <Folder Include="TalkAbout\Nature\" />
-    <Folder Include="TalkAbout\Society\" />
-    <Folder Include="TalkAbout\Sport\" />
-    <Folder Include="TalkAbout\Tech\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
