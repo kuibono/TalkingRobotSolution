@@ -80,6 +80,22 @@ namespace DataAccess
             }
         }
         private ObjectSet<Word> _Word;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SentenceTemplate> SentenceTemplateSet
+        {
+            get
+            {
+                if ((_SentenceTemplateSet == null))
+                {
+                    _SentenceTemplateSet = base.CreateObjectSet<SentenceTemplate>("SentenceTemplateSet");
+                }
+                return _SentenceTemplateSet;
+            }
+        }
+        private ObjectSet<SentenceTemplate> _SentenceTemplateSet;
 
         #endregion
 
@@ -92,6 +108,14 @@ namespace DataAccess
         {
             base.AddObject("Word", word);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the SentenceTemplateSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSentenceTemplateSet(SentenceTemplate sentenceTemplate)
+        {
+            base.AddObject("SentenceTemplateSet", sentenceTemplate);
+        }
 
         #endregion
 
@@ -100,6 +124,193 @@ namespace DataAccess
     #endregion
 
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="Data2", Name="SentenceTemplate")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class SentenceTemplate : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new SentenceTemplate object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="expression">Initial value of the Expression property.</param>
+        /// <param name="isStatement">Initial value of the IsStatement property.</param>
+        /// <param name="isInterrogative">Initial value of the IsInterrogative property.</param>
+        /// <param name="isImperatives">Initial value of the IsImperatives property.</param>
+        /// <param name="isExclamatory">Initial value of the IsExclamatory property.</param>
+        public static SentenceTemplate CreateSentenceTemplate(global::System.Int32 id, global::System.String expression, global::System.Boolean isStatement, global::System.Boolean isInterrogative, global::System.Boolean isImperatives, global::System.Boolean isExclamatory)
+        {
+            SentenceTemplate sentenceTemplate = new SentenceTemplate();
+            sentenceTemplate.Id = id;
+            sentenceTemplate.Expression = expression;
+            sentenceTemplate.IsStatement = isStatement;
+            sentenceTemplate.IsInterrogative = isInterrogative;
+            sentenceTemplate.IsImperatives = isImperatives;
+            sentenceTemplate.IsExclamatory = isExclamatory;
+            return sentenceTemplate;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Expression
+        {
+            get
+            {
+                return _Expression;
+            }
+            set
+            {
+                OnExpressionChanging(value);
+                ReportPropertyChanging("Expression");
+                _Expression = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Expression");
+                OnExpressionChanged();
+            }
+        }
+        private global::System.String _Expression;
+        partial void OnExpressionChanging(global::System.String value);
+        partial void OnExpressionChanged();
+    
+        /// <summary>
+        /// 陈述句
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsStatement
+        {
+            get
+            {
+                return _IsStatement;
+            }
+            set
+            {
+                OnIsStatementChanging(value);
+                ReportPropertyChanging("IsStatement");
+                _IsStatement = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsStatement");
+                OnIsStatementChanged();
+            }
+        }
+        private global::System.Boolean _IsStatement;
+        partial void OnIsStatementChanging(global::System.Boolean value);
+        partial void OnIsStatementChanged();
+    
+        /// <summary>
+        /// 疑问句
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsInterrogative
+        {
+            get
+            {
+                return _IsInterrogative;
+            }
+            set
+            {
+                OnIsInterrogativeChanging(value);
+                ReportPropertyChanging("IsInterrogative");
+                _IsInterrogative = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsInterrogative");
+                OnIsInterrogativeChanged();
+            }
+        }
+        private global::System.Boolean _IsInterrogative;
+        partial void OnIsInterrogativeChanging(global::System.Boolean value);
+        partial void OnIsInterrogativeChanged();
+    
+        /// <summary>
+        /// 祈使句
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsImperatives
+        {
+            get
+            {
+                return _IsImperatives;
+            }
+            set
+            {
+                OnIsImperativesChanging(value);
+                ReportPropertyChanging("IsImperatives");
+                _IsImperatives = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsImperatives");
+                OnIsImperativesChanged();
+            }
+        }
+        private global::System.Boolean _IsImperatives;
+        partial void OnIsImperativesChanging(global::System.Boolean value);
+        partial void OnIsImperativesChanged();
+    
+        /// <summary>
+        /// 感叹句
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsExclamatory
+        {
+            get
+            {
+                return _IsExclamatory;
+            }
+            set
+            {
+                OnIsExclamatoryChanging(value);
+                ReportPropertyChanging("IsExclamatory");
+                _IsExclamatory = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsExclamatory");
+                OnIsExclamatoryChanged();
+            }
+        }
+        private global::System.Boolean _IsExclamatory;
+        partial void OnIsExclamatoryChanging(global::System.Boolean value);
+        partial void OnIsExclamatoryChanged();
+
+        #endregion
+
+    
+    }
     
     /// <summary>
     /// No Metadata Documentation available.

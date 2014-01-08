@@ -10,8 +10,49 @@ namespace Test
 {
     class Program
     {
+
+        public static List<List<string>> SpWords(string str)
+        {
+            using (Data2Container c = new Data2Container())
+            {
+                List<List<string>> result = new List<List<string>>();
+                for (int i = 0; i < str.Length; i++)
+                {
+                    List<string> words = new List<string>();
+                    for (int j = str.Length - i; j > 0; j--)
+                    {
+                        string str1 = str.Substring(i, j);
+                        if (c.Word.Any(p => p.Content == str1))
+                        {
+                            words.Add(str1);
+                        }
+                    }
+                    result.Add(words);
+                }
+                return result;
+            }
+
+        }
         static void Main(string[] args)
         {
+
+
+
+            using (Data2Container c = new Data2Container())
+            {
+                string s = "我去吃饭了";
+
+                var sr = SpWords(s);
+                Console.ReadLine();
+
+            }
+
+
+
+
+
+
+            return;
             while (true)
             {
                 string input = Console.ReadLine().Trim();

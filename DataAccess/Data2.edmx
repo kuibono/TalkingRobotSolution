@@ -4,16 +4,94 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="Data2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-        <EntityContainer Name="Data2TargetContainer" >
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="Data2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Data2StoreContainer">
+    <EntitySet Name="Word" EntityType="Data2.Store.Word" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SentenceTemplateSet" EntityType="Data2.Store.SentenceTemplateSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Word">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Length" Type="int" Nullable="false" />
+    <Property Name="cn" Type="bit" Nullable="false" />
+    <Property Name="an" Type="bit" Nullable="false" />
+    <Property Name="on" Type="bit" Nullable="false" />
+    <Property Name="pp" Type="bit" Nullable="false" />
+    <Property Name="dp" Type="bit" Nullable="false" />
+    <Property Name="qp" Type="bit" Nullable="false" />
+    <Property Name="tv" Type="bit" Nullable="false" />
+    <Property Name="iv" Type="bit" Nullable="false" />
+    <Property Name="cv" Type="bit" Nullable="false" />
+    <Property Name="nv" Type="bit" Nullable="false" />
+    <Property Name="wv" Type="bit" Nullable="false" />
+    <Property Name="dv" Type="bit" Nullable="false" />
+    <Property Name="adjn" Type="bit" Nullable="false" />
+    <Property Name="adjs" Type="bit" Nullable="false" />
+    <Property Name="bno" Type="bit" Nullable="false" />
+    <Property Name="ono" Type="bit" Nullable="false" />
+    <Property Name="cno" Type="bit" Nullable="false" />
+    <Property Name="mno" Type="bit" Nullable="false" />
+    <Property Name="ano" Type="bit" Nullable="false" />
+    <Property Name="nq" Type="bit" Nullable="false" />
+    <Property Name="vq" Type="bit" Nullable="false" />
+    <Property Name="advd" Type="bit" Nullable="false" />
+    <Property Name="advr" Type="bit" Nullable="false" />
+    <Property Name="advt" Type="bit" Nullable="false" />
+    <Property Name="advn" Type="bit" Nullable="false" />
+    <Property Name="prer" Type="bit" Nullable="false" />
+    <Property Name="pred" Type="bit" Nullable="false" />
+    <Property Name="prere" Type="bit" Nullable="false" />
+    <Property Name="prepu" Type="bit" Nullable="false" />
+    <Property Name="prec" Type="bit" Nullable="false" />
+    <Property Name="pree" Type="bit" Nullable="false" />
+    <Property Name="conu" Type="bit" Nullable="false" />
+    <Property Name="conp" Type="bit" Nullable="false" />
+    <Property Name="pars" Type="bit" Nullable="false" />
+    <Property Name="part" Type="bit" Nullable="false" />
+    <Property Name="parm" Type="bit" Nullable="false" />
+    <Property Name="inth" Type="bit" Nullable="false" />
+    <Property Name="ints" Type="bit" Nullable="false" />
+    <Property Name="inta" Type="bit" Nullable="false" />
+    <Property Name="intsu" Type="bit" Nullable="false" />
+    <Property Name="intc" Type="bit" Nullable="false" />
+    <Property Name="intr" Type="bit" Nullable="false" />
+    <Property Name="oo" Type="bit" Nullable="false" />
+    <Property Name="favor" Type="int" Nullable="false" />
+    <Property Name="happy" Type="int" Nullable="false" />
+    <Property Name="anger" Type="int" Nullable="false" />
+    <Property Name="Regex" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ZhuWei" Type="bit" Nullable="false" />
+    <Property Name="DongBin" Type="bit" Nullable="false" />
+    <Property Name="PianZhengDingZhong" Type="bit" Nullable="false" />
+    <Property Name="PianZhengZhuangZhong" Type="bit" Nullable="false" />
+    <Property Name="ZhongBu" Type="bit" Nullable="false" />
+    <Property Name="LianHe" Type="bit" Nullable="false" />
+    <Property Name="LianWei" Type="bit" Nullable="false" />
+    <Property Name="JianYu" Type="bit" Nullable="false" />
+    <Property Name="TongWei" Type="bit" Nullable="false" />
+    <Property Name="FangWei" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SentenceTemplateSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Expression" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsStatement" Type="bit" Nullable="false" />
+    <Property Name="IsInterrogative" Type="bit" Nullable="false" />
+    <Property Name="IsImperatives" Type="bit" Nullable="false" />
+    <Property Name="IsExclamatory" Type="bit" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Data2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="Data2Container" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Word" EntityType="Data2.Word" />
+          <EntitySet Name="SentenceTemplateSet" EntityType="Data2.SentenceTemplate" />
         </EntityContainer>
         <EntityType Name="Word">
           <Key>
@@ -264,17 +342,119 @@
           <Property Type="Boolean" Name="TongWei" Nullable="false" />
           <Property Type="Boolean" Name="FangWei" Nullable="false" />
         </EntityType>
+        <EntityType Name="SentenceTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Expression" Nullable="false" />
+          <Property Type="Boolean" Name="IsStatement" Nullable="false" >
+            <Documentation>
+              <Summary>陈述句</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsInterrogative" Nullable="false" >
+            <Documentation>
+              <Summary>疑问句</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsImperatives" Nullable="false" >
+            <Documentation>
+              <Summary>祈使句</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="IsExclamatory" Nullable="false" >
+            <Documentation>
+              <Summary>感叹句</Summary>
+            </Documentation>
+          </Property>
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
-        <Alias Key="Model" Value="Data2" />
-        <Alias Key="Target" Value="Data2.Store" />
-        <EntityContainerMapping CdmEntityContainer="Data2Container" StorageEntityContainer="Data2TargetContainer">
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Data2StoreContainer" CdmEntityContainer="Data2Container">
+    <EntitySetMapping Name="Word">
+      <EntityTypeMapping TypeName="IsTypeOf(Data2.Word)">
+        <MappingFragment StoreEntitySet="Word">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="cn" ColumnName="cn" />
+          <ScalarProperty Name="an" ColumnName="an" />
+          <ScalarProperty Name="on" ColumnName="on" />
+          <ScalarProperty Name="pp" ColumnName="pp" />
+          <ScalarProperty Name="dp" ColumnName="dp" />
+          <ScalarProperty Name="qp" ColumnName="qp" />
+          <ScalarProperty Name="tv" ColumnName="tv" />
+          <ScalarProperty Name="iv" ColumnName="iv" />
+          <ScalarProperty Name="cv" ColumnName="cv" />
+          <ScalarProperty Name="nv" ColumnName="nv" />
+          <ScalarProperty Name="wv" ColumnName="wv" />
+          <ScalarProperty Name="dv" ColumnName="dv" />
+          <ScalarProperty Name="adjn" ColumnName="adjn" />
+          <ScalarProperty Name="adjs" ColumnName="adjs" />
+          <ScalarProperty Name="bno" ColumnName="bno" />
+          <ScalarProperty Name="ono" ColumnName="ono" />
+          <ScalarProperty Name="cno" ColumnName="cno" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="ano" ColumnName="ano" />
+          <ScalarProperty Name="nq" ColumnName="nq" />
+          <ScalarProperty Name="vq" ColumnName="vq" />
+          <ScalarProperty Name="advd" ColumnName="advd" />
+          <ScalarProperty Name="advr" ColumnName="advr" />
+          <ScalarProperty Name="advt" ColumnName="advt" />
+          <ScalarProperty Name="advn" ColumnName="advn" />
+          <ScalarProperty Name="prer" ColumnName="prer" />
+          <ScalarProperty Name="pred" ColumnName="pred" />
+          <ScalarProperty Name="prere" ColumnName="prere" />
+          <ScalarProperty Name="prepu" ColumnName="prepu" />
+          <ScalarProperty Name="prec" ColumnName="prec" />
+          <ScalarProperty Name="pree" ColumnName="pree" />
+          <ScalarProperty Name="conu" ColumnName="conu" />
+          <ScalarProperty Name="conp" ColumnName="conp" />
+          <ScalarProperty Name="pars" ColumnName="pars" />
+          <ScalarProperty Name="part" ColumnName="part" />
+          <ScalarProperty Name="parm" ColumnName="parm" />
+          <ScalarProperty Name="inth" ColumnName="inth" />
+          <ScalarProperty Name="ints" ColumnName="ints" />
+          <ScalarProperty Name="inta" ColumnName="inta" />
+          <ScalarProperty Name="intsu" ColumnName="intsu" />
+          <ScalarProperty Name="intc" ColumnName="intc" />
+          <ScalarProperty Name="intr" ColumnName="intr" />
+          <ScalarProperty Name="oo" ColumnName="oo" />
+          <ScalarProperty Name="favor" ColumnName="favor" />
+          <ScalarProperty Name="happy" ColumnName="happy" />
+          <ScalarProperty Name="anger" ColumnName="anger" />
+          <ScalarProperty Name="Regex" ColumnName="Regex" />
+          <ScalarProperty Name="ZhuWei" ColumnName="ZhuWei" />
+          <ScalarProperty Name="DongBin" ColumnName="DongBin" />
+          <ScalarProperty Name="PianZhengDingZhong" ColumnName="PianZhengDingZhong" />
+          <ScalarProperty Name="PianZhengZhuangZhong" ColumnName="PianZhengZhuangZhong" />
+          <ScalarProperty Name="ZhongBu" ColumnName="ZhongBu" />
+          <ScalarProperty Name="LianHe" ColumnName="LianHe" />
+          <ScalarProperty Name="LianWei" ColumnName="LianWei" />
+          <ScalarProperty Name="JianYu" ColumnName="JianYu" />
+          <ScalarProperty Name="TongWei" ColumnName="TongWei" />
+          <ScalarProperty Name="FangWei" ColumnName="FangWei" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SentenceTemplateSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data2.SentenceTemplate)">
+        <MappingFragment StoreEntitySet="SentenceTemplateSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+          <ScalarProperty Name="IsStatement" ColumnName="IsStatement" />
+          <ScalarProperty Name="IsInterrogative" ColumnName="IsInterrogative" />
+          <ScalarProperty Name="IsImperatives" ColumnName="IsImperatives" />
+          <ScalarProperty Name="IsExclamatory" ColumnName="IsExclamatory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
@@ -291,8 +471,9 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Data2" ZoomLevel="71" >
+      <Diagram Name="Data2" ZoomLevel="106" >
         <EntityTypeShape EntityType="Data2.Word" Width="1.875" PointX="2.625" PointY="1.375" Height="12.364563802083334" />
+        <EntityTypeShape EntityType="Data2.SentenceTemplate" Width="1.5" PointX="7.75" PointY="2.375" Height="2.1725878906249996" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
