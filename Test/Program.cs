@@ -27,7 +27,7 @@ namespace Test
                         {
                             words.Add(str1);
                             i += str1.Length;
-                            j = str.Length - i;
+                            j = str.Length - i+1;
                         }
                         else
                         {
