@@ -19,14 +19,26 @@ namespace Test
                 for (int i = 0; i < str.Length; i++)
                 {
                     List<string> words = new List<string>();
+                    List<string> tmp = new List<string>();
                     for (int j = str.Length - i; j > 0; j--)
                     {
                         string str1 = str.Substring(i, j);
                         if (c.Word.Any(p => p.Content == str1))
                         {
                             words.Add(str1);
+                            i += str1.Length;
+                            j = str.Length - i;
+                        }
+                        else
+                        {
+                            if(str1.Length==1)
+                            {
+                                words.Add(str1);
+                            }
+                            //
                         }
                     }
+
                     result.Add(words);
                 }
                 return result;
@@ -43,6 +55,15 @@ namespace Test
                 string s = "我去吃饭了";
 
                 var sr = SpWords(s);
+                foreach (List<string> list in sr)
+                {
+                    Console.Write("pi:");
+                    foreach (string s1 in list)
+                    {
+                        Console.Write(s1+"/");
+                    }
+                    Console.WriteLine("");
+                }
                 Console.ReadLine();
 
             }
