@@ -39,5 +39,44 @@ namespace DbManager
 
             }
         }
+
+        private void listSearchResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadInfo(int id)
+        {
+            Word w;
+            using(Data2Container c=new Data2Container())
+            {
+                var q = from l in c.Word where l.Id == id select l;
+                if(q.Count()>0)
+                {
+                    w = q.First();
+                }
+                else
+                {
+                    w=new Word();
+                }
+            }
+
+            txtWord.Text = w.Content;
+            txtRegex.Text = w.Regex;
+            cn.Checked = w.cn;
+            an.Checked = w.an;
+            on.Checked = w.on;
+            pp.Checked = w.pp;
+            dp.Checked = w.dp;
+            qp.Checked = w.qp;
+            tv.Checked = w.tv;
+            iv.Checked = w.iv;
+            cv.Checked = w.cv;
+            nv.Checked = w.nv;
+            wv.Checked = w.wv;
+            dv.Checked = w.dv;
+            adjn.Checked = w.adjn;
+            adjs.Checked = w.adjs;
+        }
     }
 }

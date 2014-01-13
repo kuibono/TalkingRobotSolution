@@ -188,6 +188,7 @@
             this.listSearchResult.Name = "listSearchResult";
             this.listSearchResult.Size = new System.Drawing.Size(149, 475);
             this.listSearchResult.TabIndex = 1;
+            this.listSearchResult.SelectedIndexChanged += new System.EventHandler(this.listSearchResult_SelectedIndexChanged);
             // 
             // tableLayoutPanel4
             // 
