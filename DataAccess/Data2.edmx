@@ -471,7 +471,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Data2" ZoomLevel="106" >
+      <Diagram Name="Data2" ZoomLevel="77" >
         <EntityTypeShape EntityType="Data2.Word" Width="1.875" PointX="2.625" PointY="1.375" Height="12.364563802083334" />
         <EntityTypeShape EntityType="Data2.SentenceTemplate" Width="1.5" PointX="7.75" PointY="2.375" Height="2.1725878906249996" />
       </Diagram>
