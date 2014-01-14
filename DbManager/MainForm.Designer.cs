@@ -105,6 +105,7 @@
             this.favor = new System.Windows.Forms.NumericUpDown();
             this.happy = new System.Windows.Forms.NumericUpDown();
             this.anger = new System.Windows.Forms.NumericUpDown();
+            this.status = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -266,16 +267,18 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 5;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.ColumnCount = 6;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel6.Controls.Add(this.btnAdd, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnDel, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnWords, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.status, 5, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 484);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -292,19 +295,21 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "新增";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(131, 3);
+            this.btnSave.Location = new System.Drawing.Point(110, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(259, 3);
+            this.btnDel.Location = new System.Drawing.Point(217, 3);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 0;
@@ -313,7 +318,7 @@
             // 
             // btnWords
             // 
-            this.btnWords.Location = new System.Drawing.Point(387, 3);
+            this.btnWords.Location = new System.Drawing.Point(324, 3);
             this.btnWords.Name = "btnWords";
             this.btnWords.Size = new System.Drawing.Size(75, 23);
             this.btnWords.TabIndex = 0;
@@ -1048,6 +1053,17 @@
             this.anger.Size = new System.Drawing.Size(44, 20);
             this.anger.TabIndex = 2;
             // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.status.Location = new System.Drawing.Point(538, 0);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(103, 29);
+            this.status.TabIndex = 1;
+            this.status.Text = "ready";
+            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1064,6 +1080,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.favor)).EndInit();
@@ -1152,6 +1169,7 @@
         private System.Windows.Forms.Button btnWords;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRegex;
+        private System.Windows.Forms.Label status;
     }
 }
 
